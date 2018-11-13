@@ -19,7 +19,7 @@
 ;; 
 ;;; Commentary: 
 ;; 
-;; See cloudy-savefile-mode.org
+;; See README.org
 ;; 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 
@@ -68,6 +68,8 @@
              ;; Avoid wrapping - must be done in hook so as to undo
              ;; effects of text-mode-hook
              (setq truncate-lines t)))
+
+(provide cloudy-savefile-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; cloudy-savefile-mode.el ends here

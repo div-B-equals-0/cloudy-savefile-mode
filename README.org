@@ -1,0 +1,17 @@
+* ~cloudy-savefile-mode.el~
+An Emacs major mode for viewing save files from the [[https://nublado.org][Cloudy]] astrophysical plasma physics code
+
+** Installation and configuration
+
+*** Installation by hand
+1. Place ~cloudy-savefile-mode.el~ somewhere on your ~load-path~
+2. Add to your config file
+#+BEGIN_SRC emacs-lisp
+(require cloudy-savefile-mode)
+#+END_SRC
+** Usage
+
+** Alternatives
+
+*** ~tsv-mode~
+I used to use this. 
