@@ -46,6 +46,31 @@
 ;;; Code:
 
 
+(defconst cloudy-savefile-suffixes-default
+  '("ovr" "phys" "rad" "pre" "cont")
+  "Default list of file suffixes used by Cloudy save files")
+
+(defcustom cloudy-savefile-suffixes
+  cloudy-savefile-suffixes-default
+  "List of file suffixes used by Cloudy save files"
+  :type '(repeat (string))
+  )
+
+(defun cloudy-savefile-add-to-auto-mode ()
+  "Add entries for Cloudy save files to `auto-mode-alist`.
+A single entry is added for all the file suffixes in
+`cloudy-savefile-suffixes`."
+  ;; Clean up old entries first
+  (cloudy-savefile-remove-all-from-auto-mode)
+  (let ((cloudy-regexp
+         (concat "\\." (regexp-opt cloudy-savefile-suffixes t) "\\'")))
+    (add-to-list 'auto-mode-alist (cons cloudy-regexp 'cloudy-savefile-mode))))
+
+(defun cloudy-savefile-remove-all-from-auto-mode ()
+  "Remove all entries for Cloudy save files from `auto-mode-alist`."
+  (setq auto-mode-alist
+        (rassq-delete-all `cloudy-savefile-mode auto-mode-alist)))
+
 (define-derived-mode cloudy-savefile-mode
   csv-mode "Cloudy save file"
   "Major mode for viewing Cloudy save files"

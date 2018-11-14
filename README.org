@@ -9,6 +9,18 @@ An Emacs major mode for viewing save files from the [[https://nublado.org][Cloud
 #+BEGIN_SRC emacs-lisp
 (require cloudy-savefile-mode)
 #+END_SRC
+
+*** Configuration
+1. Set ~cloudy-savefile-suffixes~ to a list of file suffixes for which you wish the mode to be automatically activated
+2. Call ~(cloudy-savefile-add-to-automode)~
+
+For example:
+#+BEGIN_SRC emacs-lisp
+  (setq cloudy-savefile-suffixes '("ovr" "phys" "rad" "pre" "cont"))
+  (cloudy-savefile-add-to-auto-mode)
+#+END_SRC
+
+You can also use the customize infrastructure to add and remove individual entries from ~cloudy-savefile-suffixes~. 
 ** Usage
 
 ** Alternatives
